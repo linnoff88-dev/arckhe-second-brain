@@ -6,7 +6,7 @@
 
 ## O que é
 
-Um "Segundo Cérebro" que conecta **Obsidian** (notas locais em Markdown) com **Claude Code** (IA no terminal) para criar um sistema de conhecimento pessoal que se auto-alimenta a cada sessão.
+Um "Segundo Cérebro" que conecta **Obsidian** (notas locais em Markdown) com **Claude Code** (IA no terminal) para criar um sistema de conhecimento pessoal que se auto-alimenta a cada sessêo.
 
 ---
 
@@ -31,8 +31,8 @@ Um "Segundo Cérebro" que conecta **Obsidian** (notas locais em Markdown) com **
            │
            ▼
     IA que se acumula.
-    Sessão 1: conhece suas pastas.
-    Sessão 20: sabe mais sobre
+    Sessêo 1: conhece suas pastas.
+    Sessêo 20: sabe mais sobre
     seu trabalho do que você lembra conscientemente.
 ```
 
@@ -42,7 +42,7 @@ Um "Segundo Cérebro" que conecta **Obsidian** (notas locais em Markdown) com **
 
 ```
 ~/second-brain/
-├── CLAUDE.md        ← O cérebro do cérebro. Lido no início de cada sessão.
+├── CLAUDE.md        ← O cérebro do cérebro. Lido no início de cada sessêo.
 ├── memory.md        ← Log de sessões. Atualizado pelo Claude Code após cada conversa.
 ├── inbox/           ← Zona de entrada. Qualquer coisa nova cai aqui primeiro.
 ├── daily/           ← Notas diárias (YYYY-MM-DD.md). Seu log contínuo.
@@ -60,9 +60,9 @@ Um "Segundo Cérebro" que conecta **Obsidian** (notas locais em Markdown) com **
 - Cria a estrutura de pastas do vault
 - Copia os skills (slash commands) e scripts
 
-### 2. Personalização (`/vault-setup`)
+### 2. Personalizaçêo (`/vault-setup`)
 - Claude te entrevista sobre seu papel, projetos e objetivos
-- Gera um `CLAUDE.md` personalizado — esse arquivo é lido no início de toda sessão
+- Gera um `CLAUDE.md` personalizado — esse arquivo é lido no início de toda sessêo
 
 ### 3. Uso diário — os 4 slash commands
 
@@ -70,17 +70,17 @@ Um "Segundo Cérebro" que conecta **Obsidian** (notas locais em Markdown) com **
 |---------|-----------|
 | `/vault-setup` | Entrevista você (papel, projetos, objetivos) e gera estrutura personalizada + CLAUDE.md + comandos customizados |
 | `/daily` | Começa seu dia — lê a nota de hoje ou cria uma, mostra prioridades, pergunta no que está trabalhando |
-| `/tldr` | No final de qualquer sessão, salva um resumo estruturado na pasta certa do vault automaticamente |
+| `/tldr` | No final de qualquer sessêo, salva um resumo estruturado na pasta certa do vault automaticamente |
 | `/file-intel` | Aponte para qualquer pasta — Gemini lê cada arquivo e gera resumos prontos para Obsidian no inbox |
 
-### 4. Importação de arquivos existentes
+### 4. Importaçêo de arquivos existentes
 - `scripts/process_docs_to_obsidian.py` — usa Gemini para ler PDFs/docs e gerar notas compactas (300-600 palavras)
-- `scripts/process_files_with_gemini.py` — versão mais ampla (Excel, CSV, JSON, código)
+- `scripts/process_files_with_gemini.py` — versêo mais ampla (Excel, CSV, JSON, código)
 
 ### 5. Efeito composto
-- `CLAUDE.md` + `memory.md` são lidos a cada sessão
+- `CLAUDE.md` + `memory.md` sêo lidos a cada sessêo
 - Quanto mais você usa, mais contexto o Claude acumula
-- Tudo fica local — são arquivos `.md` na sua máquina
+- Tudo fica local — sêo arquivos `.md` na sua máquina
 
 ---
 
@@ -98,13 +98,13 @@ Um "Segundo Cérebro" que conecta **Obsidian** (notas locais em Markdown) com **
 
 ## Limitações identificadas
 
-### Sem atualização automática
+### Sem atualizaçêo automática
 - Nada é automático — `/daily`, `/tldr`, `/file-intel` precisam ser rodados manualmente
-- O `memory.md` só é atualizado quando o Claude Code escreve nele durante uma sessão
-- Não há cron, hook ou automação em background
+- O `memory.md` só é atualizado quando o Claude Code escreve nele durante uma sessêo
+- Nêo há cron, hook ou automaçêo em background
 
 ### Sem suporte a Linux no setup
-- `setup.sh` verifica `$OSTYPE` na linha 78 e **rejeita qualquer coisa que não seja `darwin*` (macOS)**
+- `setup.sh` verifica `$OSTYPE` na linha 78 e **rejeita qualquer coisa que nêo seja `darwin*` (macOS)**
 - Obsidian no Linux precisa ser instalado manualmente via:
   - `sudo snap install obsidian --classic`
   - `flatpak install flathub md.obsidian.Obsidian`
@@ -112,7 +112,7 @@ Um "Segundo Cérebro" que conecta **Obsidian** (notas locais em Markdown) com **
 - Claude Code no Linux funciona normalmente via `curl -fsSL https://claude.ai/install.sh | sh`
 
 ### Obsidian é opcional
-- O vault funciona sem o Obsidian — são apenas arquivos Markdown
+- O vault funciona sem o Obsidian — sêo apenas arquivos Markdown
 - Qualquer editor (VS Code, Typora, etc.) serve
 - Obsidian agrega: graph view, plugins da comunidade, CLI
 
@@ -132,7 +132,7 @@ second-brain/
 ├── setup.sh                              ← Setup macOS (one-command)
 ├── setup.ps1                             ← Setup Windows (one-command)
 ├── CLAUDE.md                             ← Arquivo de sistema do vault
-├── memory.md                             ← Memória de sessão
+├── memory.md                             ← Memória de sessêo
 ├── requirements.txt                      ← Dependências Python
 ├── scripts/
 │   ├── process_docs_to_obsidian.py      ← Sintetizador Gemini 3 Flash
@@ -140,7 +140,7 @@ second-brain/
 ├── skills/
 │   ├── vault-setup/SKILL.md             ← Configurador interativo
 │   ├── daily/SKILL.md                   ← Comando de standup diário
-│   ├── tldr/SKILL.md                    ← Comando de resumo de sessão
+│   ├── tldr/SKILL.md                    ← Comando de resumo de sessêo
 │   └── file-intel/SKILL.md             ← Processar pasta via Gemini
 └── vault-template/
     ├── inbox/   daily/   projects/
